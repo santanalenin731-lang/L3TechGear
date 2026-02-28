@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Módulo Amzfast 49 - HQ Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #000000;
+            --text-light: #ffffff;
+            --accent-brand: #c3ff41;
+            /* Ajustado el verde al de "STATUS: ONLINE" */
+            --accent-purple: #8B5cf6;
+            /* Added purple from screenshot */
+            --border-dim: rgba(255, 255, 255, 0.15);
+            --card-bg: #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            font-family: 'Barlow', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+            padding-bottom: 80px;
+            /* Space for sticky button */
+        }
+
+        h1,
+        h2,
+        h3,
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* A. Terminal Header */
+        .terminal-header {
+            background-color: var(--card-bg);
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            color: var(--accent-brand);
+            /* Gris tecnológico como color base */
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-dim);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+
+
+        .terminal-text {
+            color: var(--accent-brand);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 16px;
+            background-color: var(--accent-purple);
+            margin-left: 5px;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* B. Hero Visual */
+        .hero {
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-dim);
+            background: #000;
+            aspect-ratio: 16/9;
+            box-shadow: 0 0 20px rgba(210, 255, 91, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Fallback gradient styling in case image fails */
+        .product-image[src=""] {
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .badge {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--text-light);
+            border: 1px solid var(--accent-purple);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .badge.blue {
+            background: rgba(210, 255, 91, 0.1);
+            color: var(--accent-brand);
+            border: 1px solid var(--accent-brand);
+        }
+
+        /* C. Technical Matrix */
+        .matrix {
+            padding: 24px 0;
+        }
+
+        .section-title {
+            font-size: 1.125rem;
+            color: #fff;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '>>';
+            color: var(--accent-brand);
+        }
+
+        .specs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .spec-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-dim);
+            border-radius: 6px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spec-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--accent-purple);
+            opacity: 0.8;
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+        }
+
+        .spec-title {
+            color: #fff;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .spec-desc {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            opacity: 0.9;
+        }
+
+        .spec-highlight {
+            color: var(--accent-purple);
+            font-weight: 500;
+        }
+
+        /* D. Social Proof & Authority */
+        .authority {
+            padding: 24px 0;
+            text-align: center;
+            background: linear-gradient(180deg, transparent 0%, rgba(22, 27, 34, 0.5) 100%);
+            border-top: 1px dashed var(--border-dim);
+            border-bottom: 1px dashed var(--border-dim);
+            margin: 16px 0 32px;
+        }
+
+        .authority p {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: #fff;
+            padding: 0 16px;
+        }
+
+        /* E. Primary Action */
+        .cta-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(0deg, var(--bg-deep) 60%, transparent 100%);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 480px;
+            min-height: 56px;
+            /* Touch target minimum */
+            background-color: var(--accent-brand);
+            color: #000;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 0 15px rgba(210, 255, 91, 0.4);
+            animation: pulse-glow 2s infinite;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            filter: brightness(1.15);
+            box-shadow: 0 0 25px var(--accent-brand);
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 15px rgba(210, 255, 91, 0.4), 0 0 0 0 rgba(210, 255, 91, 0.2);
+            }
+
+            70% {
+                box-shadow: 0 0 25px rgba(210, 255, 91, 0.8), 0 0 0 10px rgba(210, 255, 91, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 15px rgba(210, 255, 91, 0.4), 0 0 0 0 rgba(210, 255, 91, 0);
+            }
+        }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Legal Footer */
+        .footer {
+            padding: 24px 16px 32px;
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        .legal-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .brand-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 4px;
+            object-fit: contain;
+            /* Quitamos el filtro grayscale para respetar los colores del PNG orginal si lo requiere */
+        }
+
+        .legal-text {
+            font-size: 10px;
+            line-height: 1.4;
+            max-width: 300px;
+            text-align: left;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- A. Terminal Header -->
+    <div class="terminal-header mono">
+        <span class="terminal-text">> SYSTEM_READY: MODULE_AMZ_49 | STATUS: ONLINE</span>
+        <span class="cursor"></span>
+    </div>
+
+    <div class="container">
+        <!-- B. Hero Visual -->
+        <section class="hero">
+            <div class="image-container">
+                <!-- Using a high quality placeholder representing trading/metrics for the monitor since image generation failed -->
+                <img src="./monitor-amzfast.png" alt="Monitor Amzfast 49" class="product-image" loading="eager">
+            </div>
+            <div class="badges mono">
+                <span class="badge">Amazon's Choice</span>
+                <span class="badge blue">[ <span id="sales-counter">+100</span> Bought last month ]</span>
+            </div>
+        </section>
+
+        <!-- C. Technical Matrix -->
+        <section class="matrix">
+            <h2 class="section-title mono">TECHNICAL_MATRIX</h2>
+            <div class="specs-list">
+                <div class="spec-card">
+                    <span class="spec-title mono">Resolución</span>
+                    <span class="spec-desc"><span class="spec-highlight">DQHD 5120x1440p</span> (Dual 2K Setup).</span>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-title mono">Refresh Rate</span>
+                    <span class="spec-desc"><span class="spec-highlight">120Hz</span> (Cero latencia de mercado).</span>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-title mono">Curvatura</span>
+                    <span class="spec-desc"><span class="spec-highlight">1500R</span> (Inmersión de enfoque
+                        total).</span>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-title mono">Respuesta</span>
+                    <span class="spec-desc"><span class="spec-highlight">1ms MPRT</span> (Ejecución instantánea).</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- D. Social Proof & Authority -->
+        <section class="authority">
+            <p>"Hardware verificado para entornos de alta demanda. Optimizado para visualización multi-gráfica de
+                5120px."</p>
+        </section>
+
+        <!-- Legal Footer -->
+        <footer class="footer">
+            <div class="legal-content">
+                <img src="./L3 PNG.png" alt="L3 Tech Gear" class="brand-logo">
+                <p class="legal-text">Como afiliado de Amazon, percibo ingresos por compras adscritas que cumplen los
+                    requisitos aplicables.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- E. Primary Action -->
+    <div class="cta-container">
+        <!-- Replace href with actual Amazon affiliate link later -->
+        <a href="#" class="cta-button" target="_blank" rel="noopener noreferrer">
+            VER PRECIO ACTUAL EN AMAZON
+        </a>
+    </div>
+
+    <!-- Optional: Add a simple script to log clicks or handle smooth loading -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('SYSTEM_READY: MODULE_AMZ_49 initialized.');
+
+            // Add staggered animations to main elements
+            const animatedElements = [
+                document.querySelector('.image-container'),
+                document.querySelector('.badges'),
+                document.querySelector('.section-title'),
+                ...document.querySelectorAll('.spec-card'),
+                document.querySelector('.authority'),
+                document.querySelector('.footer')
+            ];
+
+            animatedElements.forEach((el, index) => {
+                if (el) {
+                    el.classList.add('fade-in-up');
+                    el.style.animationDelay = `${index * 0.1}s`;
+                }
+            });
+
+            // Sales counter animation loop
+            const counterElement = document.getElementById('sales-counter');
+            if (counterElement) {
+                let currentCount = 1;
+                let isCounting = true;
+
+                setInterval(() => {
+                    if (isCounting) {
+                        counterElement.textContent = `+${currentCount}`;
+                        if (currentCount >= 100) {
+                            isCounting = false;
+                            // Pause for 3 seconds when reaching 100, then restart
+                            setTimeout(() => {
+                                currentCount = 1;
+                                isCounting = true;
+                            }, 3000);
+                        } else {
+                            currentCount++;
+                        }
+                    }
+                }, 60); // Speed of the counter (ms per increment) - slowed down
+            }
+        });
+    </script>
+</body>
+
+</html>
