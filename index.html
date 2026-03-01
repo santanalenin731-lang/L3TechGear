@@ -638,9 +638,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 20px;
+            /* Added padding for mobile safety */
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
+            overflow-y: auto;
+            /* Allow scrolling if content is too tall */
         }
 
         .privacy-overlay.active {
@@ -655,11 +659,28 @@
             /* Straight corners */
             width: 90%;
             max-width: 500px;
+            max-height: 90vh;
+            /* Ensure modal fits in viewport */
+            overflow-y: auto;
+            /* Internal scrolling if needed */
             padding: 30px 24px;
             position: relative;
             transform: translateY(20px);
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
+
+            /* Hide scrollbar but keep functionality for cleaner terminal look */
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-purple) transparent;
+        }
+
+        .privacy-content::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .privacy-content::-webkit-scrollbar-thumb {
+            background: var(--accent-purple);
+            border-radius: 10px;
         }
 
         .privacy-overlay.active .privacy-content {
