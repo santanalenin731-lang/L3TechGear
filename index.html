@@ -183,7 +183,7 @@
 
         .spec-card {
             background: var(--card-bg);
-            border: 1px solid var(--border-dim);
+            border: 1px solid var(--accent-purple);
             border-radius: 6px;
             padding: 16px;
             display: flex;
@@ -191,18 +191,7 @@
             gap: 4px;
             position: relative;
             overflow: hidden;
-        }
-
-        .spec-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: var(--accent-purple);
-            opacity: 0.8;
-            box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
         }
 
         .spec-title {
@@ -220,7 +209,7 @@
         }
 
         .spec-highlight {
-            color: var(--accent-purple);
+            color: var(--accent-brand);
             font-weight: 500;
         }
 
@@ -300,6 +289,44 @@
             }
         }
 
+        /* F. Technical Review Block */
+        .review-block {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-purple);
+            border-radius: 6px;
+            padding: 24px 20px;
+            margin: 24px 0;
+            position: relative;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+        }
+
+        .review-header {
+            color: var(--accent-brand);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .review-verdict {
+            font-size: 0.9rem;
+            color: var(--accent-brand);
+            background: rgba(210, 255, 91, 0.05);
+            padding: 16px;
+            border-radius: 4px;
+            border: 1px solid rgba(210, 255, 91, 0.4);
+            line-height: 1.5;
+        }
+
         /* Animations */
         .fade-in-up {
             opacity: 0;
@@ -325,14 +352,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 8px;
             max-width: 400px;
             margin: 0 auto;
         }
 
         .brand-logo {
-            width: 64px;
-            height: 64px;
+            width: 74px;
+            height: 74px;
             border-radius: 4px;
             object-fit: contain;
             /* Quitamos el filtro grayscale para respetar los colores del PNG orginal si lo requiere */
@@ -345,10 +372,284 @@
             text-align: left;
             margin: 0;
         }
+
+        /* G. Ambient Animated Background */
+        .ambient-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            /* Send to back */
+            overflow: hidden;
+            background-color: var(--bg-deep);
+            pointer-events: none;
+            /* Clics pass through */
+        }
+
+        /* Ambient Grid */
+        .ambient-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200vw;
+            /* Oversized for parallax effect later if needed */
+            height: 200vh;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            /* Grid size */
+            background-position: center;
+            opacity: 0.5;
+            mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 80%);
+            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 80%);
+            animation: panGrid 60s linear infinite;
+        }
+
+        @keyframes panGrid {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-40px, -40px);
+                /* Move exactly one grid unit */
+            }
+        }
+
+        /* Glowing Orbs */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.25;
+            /* Increased opacity slightly for more visibility */
+            animation: floatOrb 10s ease-in-out infinite alternate;
+            /* Faster base animation */
+        }
+
+        .orb-1 {
+            width: 450px;
+            height: 450px;
+            background: var(--accent-brand);
+            top: -100px;
+            left: -100px;
+            animation-duration: 12s;
+            /* Much faster */
+        }
+
+        .orb-2 {
+            width: 550px;
+            height: 550px;
+            background: var(--accent-purple);
+            bottom: -150px;
+            right: -100px;
+            animation-duration: 15s;
+            /* Much faster */
+            animation-delay: -2s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--accent-brand);
+            top: 40%;
+            left: 60%;
+            opacity: 0.15;
+            /* Increased opacity slightly */
+            animation-duration: 18s;
+            /* Much faster */
+            animation-delay: -7s;
+        }
+
+        @keyframes floatOrb {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(100px, -150px) scale(1.2);
+                /* Wider movement */
+            }
+
+            66% {
+                transform: translate(-80px, 80px) scale(0.85);
+                /* Wider movement */
+            }
+
+            100% {
+                transform: translate(150px, 150px) scale(1.15);
+                /* Wider movement */
+            }
+        }
+
+        /* H. Privacy Policy Modal */
+        /* H. Privacy Policy Modal */
+        .footer-bottom-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .privacy-trigger {
+            display: block;
+            font-size: 11px;
+            color: #888888;
+            opacity: 0.6;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .privacy-trigger:hover,
+        .privacy-trigger:focus {
+            color: var(--accent-brand);
+            /* CCFF00 */
+            opacity: 1;
+        }
+
+        .privacy-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .privacy-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .privacy-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-purple);
+            border-radius: 0;
+            /* Straight corners */
+            width: 90%;
+            max-width: 500px;
+            padding: 30px 24px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
+        }
+
+        .privacy-overlay.active .privacy-content {
+            transform: translateY(0);
+        }
+
+        .privacy-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.2s ease, color 0.2s ease;
+            font-weight: bold;
+        }
+
+        .privacy-close-btn:hover {
+            opacity: 1;
+            color: var(--accent-brand);
+        }
+
+        .privacy-header {
+            color: var(--accent-purple);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+            word-wrap: break-word;
+            /* Prevent overflow on small screens */
+        }
+
+        .privacy-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .privacy-list li {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            opacity: 0.85;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .privacy-list li::before {
+            content: '*';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-brand);
+            font-weight: bold;
+        }
+
+        .privacy-list strong {
+            color: var(--accent-brand);
+            font-weight: normal;
+            /* Keep it console style */
+        }
+
+        .privacy-action-btn {
+            display: block;
+            width: 100%;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid var(--accent-purple);
+            color: var(--text-light);
+            padding: 12px;
+            text-align: center;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .privacy-action-btn:hover {
+            background: var(--accent-purple);
+            color: #000;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- Ambient Grid & Glow Background -->
+    <div class="ambient-background">
+        <div class="ambient-grid"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
 
     <!-- A. Terminal Header -->
     <div class="terminal-header mono">
@@ -393,6 +694,19 @@
             </div>
         </section>
 
+        <!-- F. Technical Review Block -->
+        <section class="review-block mono">
+            <div class="review-header">[ ANALISTA_ID: L3_TECH_GEAR ]</div>
+            <p class="review-text">"El Amzfast 49" redefine la productividad masiva. Tras someter este panel a flujos de
+                trabajo de alta intensidad, nuestra conclusión es que su resolución DQHD (5120x1440p) no es un lujo,
+                sino una necesidad operativa para quienes exigen una inmersión total sin distracciones.</p>
+            <div class="review-verdict">
+                >> VEREDICTO_HONESTO: "Su curvatura 1500R es impecable para el enfoque, aunque recomendamos una
+                calibración de brillo inicial para entornos muy iluminados. Si buscas la mejor relación píxel-precio del
+                mercado, L3 Tech Gear valida este modelo como tu próximo gran upgrade."
+            </div>
+        </section>
+
         <!-- D. Social Proof & Authority -->
         <section class="authority">
             <p>"Hardware verificado para entornos de alta demanda. Optimizado para visualización multi-gráfica de
@@ -401,10 +715,13 @@
 
         <!-- Legal Footer -->
         <footer class="footer">
-            <div class="legal-content">
-                <img src="./L3 PNG.png" alt="L3 Tech Gear" class="brand-logo">
-                <p class="legal-text">Como afiliado de Amazon, percibo ingresos por compras adscritas que cumplen los
-                    requisitos aplicables.</p>
+            <div class="legal-content" style="flex-direction: column; align-items: center; text-align: center;">
+                <p class="legal-text">Como afiliado de Amazon, percibo ingresos por compras adscritas que cumplen
+                    los requisitos aplicables.</p>
+                <div class="footer-bottom-row">
+                    <img src="./L3 PNG.png" alt="L3 Tech Gear" class="brand-logo" style="margin-left: 0;">
+                    <a class="privacy-trigger mono" id="openPrivacyModal">[ PRIVACY_POLICY ]</a>
+                </div>
             </div>
         </footer>
     </div>
@@ -413,8 +730,27 @@
     <div class="cta-container">
         <!-- Replace href with actual Amazon affiliate link later -->
         <a href="#" class="cta-button" target="_blank" rel="noopener noreferrer">
-            VER PRECIO ACTUAL EN AMAZON
+            CONSULTAR OFERTA LIMITADA EN AMAZON
         </a>
+    </div>
+
+    <!-- H. Privacy Policy Modal overlay -->
+    <div class="privacy-overlay" id="privacyModal">
+        <div class="privacy-content mono">
+            <button class="privacy-close-btn mono" id="closePrivacyBtn">X</button>
+            <div class="privacy-header">> [ L3_TECH_GEAR // PRIVACY_PROTOCOL ]</div>
+            <ul class="privacy-list">
+                <li><strong>TRANSPARENCIA:</strong> Este sitio participa en el Programa de Afiliados de Amazon Services
+                    LLC. Generamos comisiones por compras adscritas que cumplen los requisitos.</li>
+                <li><strong>ANÁLITICA:</strong> Implementamos Google Firebase y Meta Pixel para monitorear el
+                    rendimiento del hardware y la interacción del usuario.</li>
+                <li><strong>RASTREO:</strong> Se utilizan cookies técnicas para asegurar la correcta atribución de
+                    ventas en la plataforma de Amazon.</li>
+                <li><strong>SEGURIDAD:</strong> Los datos recopilados son anónimos y se utilizan exclusivamente para
+                    optimizar la experiencia de navegación en L3 Tech Gear.</li>
+            </ul>
+            <button class="privacy-action-btn" id="acceptPrivacyBtn">[ ACEPTAR_Y_VOLVER ]</button>
+        </div>
     </div>
 
     <!-- Optional: Add a simple script to log clicks or handle smooth loading -->
@@ -428,6 +764,7 @@
                 document.querySelector('.badges'),
                 document.querySelector('.section-title'),
                 ...document.querySelectorAll('.spec-card'),
+                document.querySelector('.review-block'),
                 document.querySelector('.authority'),
                 document.querySelector('.footer')
             ];
@@ -460,6 +797,33 @@
                         }
                     }
                 }, 60); // Speed of the counter (ms per increment) - slowed down
+            }
+
+            // Privacy Modal Logic
+            const modalOverlay = document.getElementById('privacyModal');
+            const openBtn = document.getElementById('openPrivacyModal');
+            const closeBtn = document.getElementById('closePrivacyBtn');
+            const acceptBtn = document.getElementById('acceptPrivacyBtn');
+
+            function openModal() {
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+
+            function closeModal() {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openModal);
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (acceptBtn) acceptBtn.addEventListener('click', closeModal);
+
+            // Close on outside click
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', (e) => {
+                    if (e.target === modalOverlay) closeModal();
+                });
             }
         });
     </script>
