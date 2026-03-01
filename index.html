@@ -7,6 +7,22 @@
     <title>Amzfast 49" Ultrawide Review | Expert Analysis by L3 Tech Gear</title>
     <meta name="description"
         content="Discover the tactical advantage of the Amzfast 49&quot; Ultrawide monitor. Engineered for power users, it's the ultimate command center for Trading, Video Editing, and Productivity. Read the expert analysis by L3 Tech Gear.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://l3techgear.com/amzfast-49/">
+    <meta property="og:title" content="Amzfast 49&quot; Ultrawide Review | Expert Analysis by L3 Tech Gear">
+    <meta property="og:description"
+        content="Ultimate command center for Trading, Video Editing, and Productivity. 5120x1440 DQHD @ 120Hz.">
+    <meta property="og:image" content="https://l3techgear.com/amzfast-49/AMZfast1.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://l3techgear.com/amzfast-49/">
+    <meta property="twitter:title" content="Amzfast 49&quot; Ultrawide Review | Expert Analysis by L3 Tech Gear">
+    <meta property="twitter:description"
+        content="Ultimate command center for Trading, Video Editing, and Productivity. 5120x1440 DQHD @ 120Hz.">
+    <meta property="twitter:image" content="https://l3techgear.com/amzfast-49/AMZfast1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,9 +33,9 @@
             --bg-deep: #000000;
             --text-light: #ffffff;
             --accent-brand: #c3ff41;
-            /* Ajustado el verde al de "STATUS: ONLINE" */
+            /* Match green to "STATUS: ONLINE" */
             --accent-purple: #8B5cf6;
-            /* Added purple from screenshot */
+            /* Premium purple accent */
             --border-dim: rgba(255, 255, 255, 0.15);
             --card-bg: #111111;
         }
@@ -56,11 +72,11 @@
             padding: 8px 16px;
             font-size: 0.85rem;
             color: var(--accent-brand);
-            /* Gris tecnológico como color base */
+            /* Tech grey as base color */
             display: flex;
             align-items: center;
             justify-content: space-between;
-            /* separates left and right content */
+            /* Separates left and right content */
             border-bottom: 1px solid var(--border-dim);
             position: sticky;
             top: 0;
@@ -356,6 +372,73 @@
             line-height: 1.5;
         }
 
+        .about-section {
+            background-color: transparent;
+            border: 1px dashed var(--border-dim);
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin: 24px 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-section:hover {
+            border-color: var(--accent-purple);
+            background: rgba(163, 115, 255, 0.03);
+            transform: translateY(-2px);
+        }
+
+        .about-header {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .about-header::before {
+            content: '>';
+            color: var(--accent-purple);
+        }
+
+        .about-trigger-text {
+            font-size: 0.8rem;
+            color: var(--accent-purple);
+            opacity: 0.6;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .about-text {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            opacity: 0.8;
+            margin-bottom: 12px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            color: var(--accent-brand);
+            font-weight: 700;
+            text-decoration: none;
+            padding: 8px 12px;
+            background: rgba(210, 255, 91, 0.1);
+            border: 1px solid var(--accent-brand);
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+
+        .contact-email:hover {
+            background: var(--accent-brand);
+            color: #000;
+        }
+
         /* Animations */
         .fade-in-up {
             opacity: 0;
@@ -391,7 +474,7 @@
             height: 74px;
             border-radius: 4px;
             object-fit: contain;
-            /* Quitamos el filtro grayscale para respetar los colores del PNG orginal si lo requiere */
+            /* Removed grayscale filter to respect original PNG colors if required */
         }
 
         .legal-text {
@@ -785,10 +868,16 @@
             <p>"Hardware verified for high-demand environments. Optimized for multi-graphic display of 5120px."</p>
         </section>
 
+        <!-- About Us & Contact Trigger -->
+        <section class="about-section mono" id="aboutTrigger">
+            <h3 class="about-header">ABOUT_L3_TECH_GEAR</h3>
+            <span class="about-trigger-text">[ EXECUTE_IDENTITY_FETCH ]</span>
+        </section>
+
         <!-- Legal Footer -->
         <footer class="footer">
             <div class="legal-content" style="flex-direction: column; align-items: center; text-align: center;">
-                <p class="legal-text">As an Amazon Associate, I earn from qualifying purchases.</p>
+                <p class="legal-text">As an Amazon Associate I earn from qualifying purchases.</p>
                 <div class="footer-bottom-row">
                     <img src="./L3 PNG.png" alt="L3 Tech Gear" class="brand-logo" style="margin-left: 0;">
                     <a class="privacy-trigger mono" id="openPrivacyModal">[ PRIVACY_POLICY ]</a>
@@ -801,7 +890,7 @@
     <div class="cta-container">
         <!-- Replace href with actual Amazon affiliate link later -->
         <a href="#" class="cta-button" target="_blank" rel="noopener noreferrer">
-            CHECK LIMITED OFFER ON AMAZON
+            <span style="opacity:0.5; margin-right:8px; font-weight:normal;">[#ad]</span> CHECK LIMITED OFFER ON AMAZON
         </a>
     </div>
 
@@ -816,12 +905,65 @@
                     We earn commissions on qualifying purchases.</li>
                 <li><strong>ANALYTICS:</strong> We implement Google Firebase and Meta Pixel to monitor hardware
                     performance and user interaction.</li>
-                <li><strong>TRACKING:</strong> Technical cookies are used to ensure correct sales attribution on the
-                    Amazon platform.</li>
+                <li><strong>TRACKING & COMPLIANCE:</strong> Amazon and authorized third parties may use cookies to serve
+                    ads, track interactions, and ensure correct sales attribution. Users retain data access and deletion
+                    rights under CPRA/GDPR.</li>
                 <li><strong>SECURITY:</strong> The collected data is anonymous and used exclusively to optimize the
                     browsing experience on L3 Tech Gear.</li>
             </ul>
             <button class="privacy-action-btn" id="acceptPrivacyBtn">[ ACCEPT_AND_RETURN ]</button>
+        </div>
+    </div>
+
+    <!-- I. About Us Modal overlay -->
+    <div class="privacy-overlay" id="aboutModal">
+        <div class="privacy-content mono"
+            style="border-color: var(--accent-purple); box-shadow: 0 0 30px rgba(163, 115, 255, 0.1);">
+            <button class="privacy-close-btn mono" id="closeAboutBtn">X</button>
+            <img src="./L3 PNG.png" alt="L3 Tech Gear Logo" class="privacy-logo">
+            <div class="privacy-header" style="color: var(--accent-purple); border-bottom-color: var(--accent-purple);">
+                > [ L3_TECH_GEAR // IDENTITY_LOG ]</div>
+            <div style="margin-top: 20px;">
+                <p class="about-text">
+                    Welcome to L3 Tech Gear. This platform is the specialized hardware analysis terminal founded by
+                    <span style="color: var(--accent-brand); font-weight: bold;">Lenin Santana De Jesus</span>. Driven
+                    by a lifelong obsession with hardware architecture and system optimization, Lenin serves as the lead
+                    editor and technical strategist behind every report published here.
+                </p>
+                <p class="about-text">
+                    Joined by his brother and primary collaborator, <span
+                        style="color: var(--accent-brand); font-weight: bold;">Starlin Santana De Jesus</span>, the duo
+                    operates as a unified engineering unit. Their brotherhood forms the core of L3 Tech Gear, blending
+                    shared technical intuition with a rigorous analytical approach to modern computing.
+                </p>
+                <p class="about-text">
+                    For the Santana De Jesus brothers, technology is far more than a collection of tools; it is a
+                    profound multiplier of human capability. Their passion is rooted in the "Tactical Advantage"—the
+                    belief that the right hardware doesn't just simplify work, it transforms the speed and quality of
+                    professional execution.
+                </p>
+                <p class="about-text">
+                    Beyond this outpost, Lenin and Starlin manage a broader ecosystem of digital engineering projects
+                    and technical consultancies. L3 Tech Gear serves as the central node for their hardware vetting
+                    process, ensuring that only the most efficient and high-performance units reach their standard for
+                    operation.
+                </p>
+                <p class="about-text">
+                    This site was born from a commitment to absolute vanguard technology. We cut through the marketing
+                    noise of "consumer-grade" products to find the elite tools that provide a genuine operational edge
+                    for pro-users, traders, and creative professionals worldwide.
+                </p>
+                <p class="about-text">
+                    Our mission is to decode technical complexity into actionable data. Whether you are driving 7
+                    million pixels on an ultrawide canvas or optimizing a high-frequency trading desk, Lenin and Starlin
+                    provide the ground-truth analysis required to make every hardware investment a green-light success.
+                </p>
+                <p class="about-text" style="color: var(--accent-purple); margin-top: 24px;">// COMM_CHANNEL_OPEN</p>
+                <a href="mailto:contact@l3techgear.com" class="contact-email">PING: contact@l3techgear.com</a>
+            </div>
+            <button class="privacy-action-btn" id="closeAboutActionBtn"
+                style="background: var(--accent-purple); border-color: var(--accent-purple); margin-top: 32px;">[
+                DISCONNECT ]</button>
         </div>
     </div>
 
@@ -899,6 +1041,7 @@
                 ...document.querySelectorAll('.spec-card'),
                 document.querySelector('.review-block'),
                 document.querySelector('.authority'),
+                document.querySelector('.about-section'),
                 document.querySelector('.footer')
             ];
 
@@ -956,6 +1099,37 @@
             if (modalOverlay) {
                 modalOverlay.addEventListener('click', (e) => {
                     if (e.target === modalOverlay) closeModal();
+                });
+            }
+
+            // About Us Modal Logic
+            const aboutModal = document.getElementById('aboutModal');
+            const aboutTrigger = document.getElementById('aboutTrigger');
+            const closeAboutBtn = document.getElementById('closeAboutBtn');
+            const closeAboutActionBtn = document.getElementById('closeAboutActionBtn');
+
+            function openAboutModal() {
+                if (aboutModal) {
+                    aboutModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            function closeAboutModal() {
+                if (aboutModal) {
+                    aboutModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (aboutTrigger) aboutTrigger.addEventListener('click', openAboutModal);
+            if (closeAboutBtn) closeAboutBtn.addEventListener('click', closeAboutModal);
+            if (closeAboutActionBtn) closeAboutActionBtn.addEventListener('click', closeAboutModal);
+
+            // Close About Modal on outside click
+            if (aboutModal) {
+                aboutModal.addEventListener('click', (e) => {
+                    if (e.target === aboutModal) closeAboutModal();
                 });
             }
         });
