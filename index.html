@@ -848,7 +848,7 @@
                             left: currentIndex * slider.clientWidth,
                             behavior: 'smooth'
                         });
-                    }, 3000);
+                    }, 5000);
                 };
 
                 const stopAutoPlay = () => {
@@ -865,7 +865,7 @@
                     // Wait a moment after interaction ends before restarting
                     setTimeout(() => {
                         if (!isInteracting) startAutoPlay();
-                    }, 3000);
+                    }, 5000);
                 };
 
                 // Touch and pointer events
