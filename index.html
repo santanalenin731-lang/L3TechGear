@@ -580,6 +580,15 @@
             color: var(--accent-brand);
         }
 
+        .privacy-logo {
+            height: 28px;
+            width: auto;
+            margin-bottom: 20px;
+            display: block;
+            /* subtle glow for the logo itself inside the modal to match hacker aesthetic */
+            filter: drop-shadow(0 0 5px rgba(210, 255, 91, 0.3));
+        }
+
         .privacy-header {
             color: var(--accent-purple);
             font-size: 0.9rem;
@@ -746,6 +755,7 @@
     <div class="privacy-overlay" id="privacyModal">
         <div class="privacy-content mono">
             <button class="privacy-close-btn mono" id="closePrivacyBtn">X</button>
+            <img src="./L3 PNG.png" alt="L3 Tech Gear Logo" class="privacy-logo">
             <div class="privacy-header">> [ L3_TECH_GEAR // PRIVACY_PROTOCOL ]</div>
             <ul class="privacy-list">
                 <li><strong>TRANSPARENCY:</strong> This site participates in the Amazon Services LLC Associates Program.
