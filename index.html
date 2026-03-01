@@ -128,10 +128,30 @@
             box-shadow: 0 0 20px rgba(210, 255, 91, 0.1);
         }
 
+        .image-slider {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .image-slider::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari and Opera */
+        }
+
         .product-image {
+            flex: 0 0 100%;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            scroll-snap-align: start;
             display: block;
         }
 
@@ -684,8 +704,11 @@
         <!-- B. Hero Visual -->
         <section class="hero">
             <div class="image-container">
-                <!-- Using a high quality placeholder representing trading/metrics for the monitor since image generation failed -->
-                <img src="./monitor-amzfast.png" alt="Monitor Amzfast 49" class="product-image" loading="eager">
+                <div class="image-slider" id="productImageSlider">
+                    <img src="./AMZfast1.png" alt="Monitor Amzfast 49 - View 1" class="product-image" loading="eager">
+                    <img src="./AMZfast2.png" alt="Monitor Amzfast 49 - View 2" class="product-image" loading="lazy">
+                    <img src="./3.jpg" alt="Monitor Amzfast 49 - View 3" class="product-image" loading="lazy">
+                </div>
             </div>
             <div class="badges mono">
                 <span class="badge">Amazon's Choice</span>
@@ -806,6 +829,67 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             console.log('SYSTEM_READY: MODULE_AMZ_49 initialized.');
+
+            // Image Slider Auto-play Logic
+            const slider = document.getElementById('productImageSlider');
+            if (slider) {
+                let autoPlayInterval;
+                let currentIndex = 0;
+                const totalImages = 3;
+                let isInteracting = false;
+
+                const startAutoPlay = () => {
+                    if (isInteracting) return;
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = setInterval(() => {
+                        if (slider.clientWidth === 0) return;
+                        currentIndex = (currentIndex + 1) % totalImages;
+                        slider.scrollTo({
+                            left: currentIndex * slider.clientWidth,
+                            behavior: 'smooth'
+                        });
+                    }, 3000);
+                };
+
+                const stopAutoPlay = () => {
+                    clearInterval(autoPlayInterval);
+                };
+
+                const handleInteractionStart = () => {
+                    isInteracting = true;
+                    stopAutoPlay();
+                };
+
+                const handleInteractionEnd = () => {
+                    isInteracting = false;
+                    // Wait a moment after interaction ends before restarting
+                    setTimeout(() => {
+                        if (!isInteracting) startAutoPlay();
+                    }, 3000);
+                };
+
+                // Touch and pointer events
+                slider.addEventListener('touchstart', handleInteractionStart, { passive: true });
+                slider.addEventListener('mouseenter', handleInteractionStart);
+                slider.addEventListener('pointerdown', handleInteractionStart);
+
+                slider.addEventListener('touchend', handleInteractionEnd, { passive: true });
+                slider.addEventListener('mouseleave', handleInteractionEnd);
+                slider.addEventListener('pointerup', handleInteractionEnd);
+                slider.addEventListener('pointerleave', handleInteractionEnd);
+
+                // Keep index in sync during manual scrolling
+                let scrollTimeout;
+                slider.addEventListener('scroll', () => {
+                    if (slider.clientWidth === 0) return;
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        currentIndex = Math.round(slider.scrollLeft / slider.clientWidth);
+                    }, 50);
+                }, { passive: true });
+
+                startAutoPlay();
+            }
 
             // Add staggered animations to main elements
             const animatedElements = [
