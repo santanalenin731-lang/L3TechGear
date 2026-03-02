@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LG 45" UltraGear OLED Review | Expert Analysis by L3 Tech Gear</title>
+    <meta name="description"
+        content="Discover the tactical advantage of the LG 45&quot; UltraGear OLED monitor. Engineered for power users, it's the ultimate command center for Trading, Video Editing, and Productivity. Read the expert analysis by L3 Tech Gear.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://l3techgear.com/lg-45gx950a/">
+    <meta property="og:title" content="LG 45&quot; UltraGear OLED Review | Expert Analysis by L3 Tech Gear">
+    <meta property="og:description"
+        content="Ultimate command center for premium users. 5120x2160 5K2K WUHD OLED @ 330Hz dual-mode.">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://l3techgear.com/lg-45gx950a/">
+    <meta property="twitter:title" content="LG 45&quot; UltraGear OLED Review | Expert Analysis by L3 Tech Gear">
+    <meta property="twitter:description"
+        content="Ultimate command center for premium users. 5120x2160 5K2K WUHD OLED @ 330Hz dual-mode.">
+    <meta property="twitter:image" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #000000;
+            --text-light: #ffffff;
+            --accent-brand: #c3ff41;
+            /* Match green to "STATUS: ONLINE" */
+            --accent-purple: #8B5cf6;
+            /* Premium purple accent */
+            --border-dim: rgba(255, 255, 255, 0.15);
+            --card-bg: #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            font-family: 'Barlow', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+            padding-bottom: 80px;
+            /* Space for sticky button */
+        }
+
+        h1,
+        h2,
+        h3,
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* A. Terminal Header */
+        .terminal-header {
+            background-color: var(--card-bg);
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            color: var(--accent-brand);
+            /* Tech grey as base color */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* Separates left and right content */
+            border-bottom: 1px solid var(--border-dim);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .terminal-status-container {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .terminal-text {
+            color: var(--accent-brand);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .return-link {
+            color: var(--accent-purple);
+            text-decoration: none;
+            margin-right: 12px;
+            font-weight: 700;
+            transition: color 0.2s ease, text-shadow 0.2s ease;
+        }
+
+        .return-link:hover {
+            color: var(--accent-brand);
+            text-shadow: 0 0 8px rgba(195, 255, 65, 0.5);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 16px;
+            background-color: var(--accent-purple);
+            margin-left: 8px;
+            /* Slightly increased margin to separate from STATUS */
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* B. Hero Visual */
+        .hero {
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-dim);
+            background: #000;
+            aspect-ratio: 16/9;
+            box-shadow: 0 0 20px rgba(210, 255, 91, 0.1);
+        }
+
+        .image-slider {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .image-slider::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari and Opera */
+        }
+
+        .product-image {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            scroll-snap-align: start;
+            display: block;
+        }
+
+        /* Fallback gradient styling in case image fails */
+        .product-image[src=""] {
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .badge {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--text-light);
+            border: 1px solid var(--accent-purple);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .badge.blue {
+            background: rgba(210, 255, 91, 0.1);
+            color: var(--accent-brand);
+            border: 1px solid var(--accent-brand);
+        }
+
+        /* C. Technical Matrix */
+        .matrix {
+            padding: 24px 0;
+        }
+
+        .section-title {
+            font-size: 1.125rem;
+            color: #fff;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '>>';
+            color: var(--accent-brand);
+        }
+
+        .specs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .spec-card {
+            background: var(--card-bg);
+            border: 1px solid var(--accent-purple);
+            border-radius: 6px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+        }
+
+        .spec-title {
+            color: #fff;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .spec-desc {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            opacity: 0.9;
+        }
+
+        .spec-highlight {
+            color: var(--accent-brand);
+            font-weight: 500;
+        }
+
+        /* D. Social Proof & Authority */
+        .authority {
+            padding: 24px 0;
+            text-align: center;
+            background: linear-gradient(180deg, transparent 0%, rgba(22, 27, 34, 0.5) 100%);
+            border-top: 1px dashed var(--border-dim);
+            border-bottom: 1px dashed var(--border-dim);
+            margin: 16px 0 32px;
+        }
+
+        .authority p {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: #fff;
+            padding: 0 16px;
+        }
+
+        /* E. Primary Action */
+        .cta-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(0deg, var(--bg-deep) 60%, transparent 100%);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 480px;
+            min-height: 56px;
+            /* Touch target minimum */
+            background-color: var(--accent-brand);
+            color: #000;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 0 15px rgba(210, 255, 91, 0.4);
+            animation: pulse-glow 2s infinite;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            filter: brightness(1.15);
+            box-shadow: 0 0 25px var(--accent-brand);
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 15px rgba(210, 255, 91, 0.4), 0 0 0 0 rgba(210, 255, 91, 0.2);
+            }
+
+            70% {
+                box-shadow: 0 0 25px rgba(210, 255, 91, 0.8), 0 0 0 10px rgba(210, 255, 91, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 15px rgba(210, 255, 91, 0.4), 0 0 0 0 rgba(210, 255, 91, 0);
+            }
+        }
+
+        /* F. Technical Review Block */
+        .review-block {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-purple);
+            border-radius: 6px;
+            padding: 24px 20px;
+            margin: 24px 0;
+            position: relative;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+        }
+
+        .review-header {
+            color: var(--accent-brand);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .review-verdict {
+            font-size: 0.9rem;
+            color: var(--accent-brand);
+            background: rgba(210, 255, 91, 0.05);
+            padding: 16px;
+            border-radius: 4px;
+            border: 1px solid rgba(210, 255, 91, 0.4);
+            line-height: 1.5;
+        }
+
+        .about-section {
+            background-color: transparent;
+            border: 1px dashed var(--border-dim);
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin: 24px 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-section:hover {
+            border-color: var(--accent-purple);
+            background: rgba(163, 115, 255, 0.03);
+            transform: translateY(-2px);
+        }
+
+        .about-header {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .about-header::before {
+            content: '>';
+            color: var(--accent-purple);
+        }
+
+        .about-trigger-text {
+            font-size: 0.8rem;
+            color: var(--accent-purple);
+            opacity: 0.6;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .about-text {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            opacity: 0.8;
+            margin-bottom: 12px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            color: var(--accent-brand);
+            font-weight: 700;
+            text-decoration: none;
+            padding: 8px 12px;
+            background: rgba(210, 255, 91, 0.1);
+            border: 1px solid var(--accent-brand);
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+
+        .contact-email:hover {
+            background: var(--accent-brand);
+            color: #000;
+        }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Legal Footer */
+        .footer {
+            padding: 24px 16px 32px;
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        .legal-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .brand-logo {
+            width: 74px;
+            height: 74px;
+            border-radius: 4px;
+            object-fit: contain;
+            /* Removed grayscale filter to respect original PNG colors if required */
+        }
+
+        .legal-text {
+            font-size: 10px;
+            line-height: 1.4;
+            max-width: 300px;
+            text-align: left;
+            margin: 0;
+        }
+
+        /* G. Ambient Animated Background */
+        .ambient-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            /* Send to back */
+            overflow: hidden;
+            background-color: var(--bg-deep);
+            pointer-events: none;
+            /* Clics pass through */
+        }
+
+        /* Ambient Grid */
+        .ambient-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200vw;
+            /* Oversized for parallax effect later if needed */
+            height: 200vh;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            /* Grid size */
+            background-position: center;
+            opacity: 0.5;
+            mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 80%);
+            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 80%);
+            animation: panGrid 60s linear infinite;
+        }
+
+        @keyframes panGrid {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-40px, -40px);
+                /* Move exactly one grid unit */
+            }
+        }
+
+        /* Glowing Orbs */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.25;
+            /* Increased opacity slightly for more visibility */
+            animation: floatOrb 10s ease-in-out infinite alternate;
+            /* Faster base animation */
+        }
+
+        .orb-1 {
+            width: 450px;
+            height: 450px;
+            background: var(--accent-brand);
+            top: -100px;
+            left: -100px;
+            animation-duration: 12s;
+            /* Much faster */
+        }
+
+        .orb-2 {
+            width: 550px;
+            height: 550px;
+            background: var(--accent-purple);
+            bottom: -150px;
+            right: -100px;
+            animation-duration: 15s;
+            /* Much faster */
+            animation-delay: -2s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--accent-brand);
+            top: 40%;
+            left: 60%;
+            opacity: 0.15;
+            /* Increased opacity slightly */
+            animation-duration: 18s;
+            /* Much faster */
+            animation-delay: -7s;
+        }
+
+        @keyframes floatOrb {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(100px, -150px) scale(1.2);
+                /* Wider movement */
+            }
+
+            66% {
+                transform: translate(-80px, 80px) scale(0.85);
+                /* Wider movement */
+            }
+
+            100% {
+                transform: translate(150px, 150px) scale(1.15);
+                /* Wider movement */
+            }
+        }
+
+        /* H. Privacy Policy Modal */
+        /* H. Privacy Policy Modal */
+        .footer-bottom-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .privacy-trigger {
+            display: block;
+            font-size: 11px;
+            color: #888888;
+            opacity: 0.6;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .privacy-trigger:hover,
+        .privacy-trigger:focus {
+            color: var(--accent-brand);
+            /* CCFF00 */
+            opacity: 1;
+        }
+
+        .privacy-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            /* Added padding for mobile safety */
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            overflow-y: auto;
+            /* Allow scrolling if content is too tall */
+        }
+
+        .privacy-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .privacy-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-purple);
+            border-radius: 0;
+            /* Straight corners */
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            /* Ensure modal fits in viewport */
+            overflow-y: auto;
+            /* Internal scrolling if needed */
+            padding: 30px 24px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
+
+            /* Hide scrollbar but keep functionality for cleaner terminal look */
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-purple) transparent;
+        }
+
+        .privacy-content::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .privacy-content::-webkit-scrollbar-thumb {
+            background: var(--accent-purple);
+            border-radius: 10px;
+        }
+
+        .privacy-overlay.active .privacy-content {
+            transform: translateY(0);
+        }
+
+        .privacy-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.2s ease, color 0.2s ease;
+            font-weight: bold;
+        }
+
+        .privacy-close-btn:hover {
+            opacity: 1;
+            color: var(--accent-brand);
+        }
+
+        .privacy-logo {
+            height: 84px;
+            /* Increased by 300% from 28px */
+            width: auto;
+            margin: 0 auto 20px auto;
+            /* Centered horizontally */
+            display: block;
+            /* subtle glow for the logo itself inside the modal to match hacker aesthetic */
+            filter: drop-shadow(0 0 5px rgba(210, 255, 91, 0.3));
+        }
+
+        .privacy-header {
+            color: var(--accent-purple);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+            word-wrap: break-word;
+            /* Prevent overflow on small screens */
+        }
+
+        .privacy-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .privacy-list li {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            opacity: 0.85;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .privacy-list li::before {
+            content: '*';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-brand);
+            font-weight: bold;
+        }
+
+        .privacy-list strong {
+            color: var(--accent-brand);
+            font-weight: normal;
+            /* Keep it console style */
+        }
+
+        .privacy-action-btn {
+            display: block;
+            width: 100%;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid var(--accent-purple);
+            color: var(--text-light);
+            padding: 12px;
+            text-align: center;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .privacy-action-btn:hover {
+            background: var(--accent-purple);
+            color: #000;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Ambient Grid & Glow Background -->
+    <div class="ambient-background">
+        <div class="ambient-grid"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <!-- A. Terminal Header -->
+    <div class="terminal-header mono">
+        <div style="display: flex; align-items: center;">
+            <a href="../index.html" class="return-link">[< RETURN]</a>
+                    <span class="terminal-text">> SYSTEM_READY: MODULE_LG_45</span>
+        </div>
+        <span class="terminal-status-container">
+            <span class="terminal-text">| STATUS: ONLINE</span>
+            <span class="cursor"></span>
+        </span>
+    </div>
+
+    <div class="container">
+        <!-- B. Hero Visual -->
+        <section class="hero">
+            <div class="image-container">
+                <div class="image-slider" id="productImageSlider">
+                    <!-- Images to be added later by user -->
+                    <div
+                        style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; min-height: 250px; background: #111;">
+                        <span class="mono" style="color: var(--accent-purple); opacity:0.5;">[ PENDING_VISUAL_ASSETS
+                            ]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="badges mono">
+                <span class="badge">OLED</span>
+                <span class="badge blue">[ <span id="sales-counter">DUAL_MODE</span> ACTIVATED ]</span>
+            </div>
+        </section>
+
+        <!-- C. Technical Matrix -->
+        <section class="matrix">
+            <h2 class="section-title mono">TECHNICAL_MATRIX</h2>
+            <div class="specs-list">
+                <div class="spec-card">
+                    <span class="spec-title mono">Resolution</span>
+                    <span class="spec-desc"><span class="spec-highlight">5K2K WUHD</span> (5120x2160) OLED Panel.</span>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-title mono">Refresh Rate</span>
+                    <span class="spec-desc"><span class="spec-highlight">165Hz / 330Hz</span> (Dual-Mode
+                        Technology).</span>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-title mono">Curvature</span>
+                    <span class="spec-desc"><span class="spec-highlight">800R</span> (Extreme immersive focus).</span>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-title mono">Response</span>
+                    <span class="spec-desc"><span class="spec-highlight">0.03ms GtG</span> (Near zero latency).</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- F. Technical Review Block -->
+        <section class="review-block mono">
+            <div class="review-header">[ ANALYST_ID: L3_TECH_GEAR ]</div>
+
+            <p class="review-text"><span style="color: var(--accent-brand); font-weight: bold;">[
+                    01_THE_TACTICAL_ADVANTAGE ]</span><br>
+                "The LG 45" UltraGear is not just an OLED display; it is a massive expansion of your operational field.
+                By
+                delivering a 5K2K WUHD resolution with an extreme 800R curve, it wraps your primary data directly around
+                your
+                field of view. For high-stakes workflows, having a seamless, ultra-wide canvas with infinite OLED
+                contrast
+                is the ultimate tactical advantage."</p>
+
+            <p class="review-text"><span style="color: var(--accent-brand); font-weight: bold;">[
+                    02_IDEAL_USER_PROFILING ]</span><br>
+                "This hardware is engineered for top-tier professionals. Traders can monitor dense charting with
+                absolute clarity,
+                while Video Editors gain a sprawling 21:9 timeline view with extreme color precision. The Dual-Mode
+                switching
+                (165Hz natively vs 330Hz for rapid interaction) makes this unit the definitive command center."</p>
+
+            <p class="review-text"><span style="color: var(--accent-brand); font-weight: bold;">[
+                    03_MARKET_EFFICIENCY_VALIDATION ]</span><br>
+                "Our technical audit shows that this model's implementation of OLED technology effectively out-performs
+                standard IPS hardware in absolute contrast and pixel response. L3 Tech Gear validates this as a premium
+                investment, maximizing response time to 0.03ms and rendering motion blur practically non-existent."</p>
+
+            <p class="review-text"><span style="color: var(--accent-brand); font-weight: bold;">[
+                    04_ERGONOMIC_ENGINEERING_REPORT ]</span><br>
+                "Long-term visual comfort is critical for 8+ hour sessions. The 800R curvature is extremely aggressive
+                but
+                mathematically optimized for its enormous footprint, removing the need for neck straining. It actively
+                hugs
+                your peripheral vision, keeping you centered in a dome of data without moving your head."</p>
+
+            <div class="review-verdict" style="margin-top: 16px;">
+                <span style="color: var(--text-light); font-weight: bold;">[ 05_HONEST_VERDICT_&amp;_REQUIREMENTS
+                    ]</span><br>
+                "A word of honest caution: driving over 11 million pixels requires a flagship GPU matrix. We do not
+                recommend this
+                for standard consumer rigs. Ensure your command station utilizes DP 2.1 to prevent bandwidth
+                bottlenecks. For those with
+                tier 1 hardware, L3 Tech Gear gives this OLED unit its highest clearance for 2026."
+            </div>
+        </section>
+
+        <!-- D. Social Proof & Authority -->
+        <section class="authority">
+            <p>"Hardware verified for high-demand environments. Optimized for multi-graphic display of 5120px."</p>
+        </section>
+
+        <!-- About Us & Contact Trigger -->
+        <section class="about-section mono" id="aboutTrigger">
+            <h3 class="about-header">ABOUT_L3_TECH_GEAR</h3>
+            <span class="about-trigger-text">[ EXECUTE_IDENTITY_FETCH ]</span>
+        </section>
+
+        <!-- Legal Footer -->
+        <footer class="footer">
+            <div class="legal-content" style="flex-direction: column; align-items: center; text-align: center;">
+                <p class="legal-text">As an Amazon Associate I earn from qualifying purchases.</p>
+                <div class="footer-bottom-row">
+                    <img src="./L3 PNG.png" alt="L3 Tech Gear" class="brand-logo" style="margin-left: 0;">
+                    <a class="privacy-trigger mono" id="openPrivacyModal">[ PRIVACY_POLICY ]</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- E. Primary Action -->
+    <div class="cta-container">
+        <!-- Replace href with actual Amazon affiliate link later -->
+        <a href="https://www.amazon.com/gp/product/B0DYG9DKX8/ref=ox_sc_act_title_2?smid=ATVPDKIKX0DER&th=1"
+            class="cta-button" target="_blank" rel="noopener noreferrer">
+            <span style="opacity:0.5; margin-right:8px; font-weight:normal;">[#ad]</span> CHECK LIMITED OFFER ON AMAZON
+        </a>
+    </div>
+
+    <!-- H. Privacy Policy Modal overlay -->
+    <div class="privacy-overlay" id="privacyModal">
+        <div class="privacy-content mono">
+            <button class="privacy-close-btn mono" id="closePrivacyBtn">X</button>
+            <img src="./L3 PNG.png" alt="L3 Tech Gear Logo" class="privacy-logo">
+            <div class="privacy-header">> [ L3_TECH_GEAR // PRIVACY_PROTOCOL ]</div>
+            <ul class="privacy-list">
+                <li><strong>TRANSPARENCY:</strong> This site participates in the Amazon Services LLC Associates Program.
+                    We earn commissions on qualifying purchases.</li>
+                <li><strong>ANALYTICS:</strong> We implement Google Firebase and Meta Pixel to monitor hardware
+                    performance and user interaction.</li>
+                <li><strong>TRACKING & COMPLIANCE:</strong> Amazon and authorized third parties may use cookies to serve
+                    ads, track interactions, and ensure correct sales attribution. Users retain data access and deletion
+                    rights under CPRA/GDPR.</li>
+                <li><strong>SECURITY:</strong> The collected data is anonymous and used exclusively to optimize the
+                    browsing experience on L3 Tech Gear.</li>
+            </ul>
+            <button class="privacy-action-btn" id="acceptPrivacyBtn">[ ACCEPT_AND_RETURN ]</button>
+        </div>
+    </div>
+
+    <!-- I. About Us Modal overlay -->
+    <div class="privacy-overlay" id="aboutModal">
+        <div class="privacy-content mono"
+            style="border-color: var(--accent-purple); box-shadow: 0 0 30px rgba(163, 115, 255, 0.1);">
+            <button class="privacy-close-btn mono" id="closeAboutBtn">X</button>
+            <img src="./L3 PNG.png" alt="L3 Tech Gear Logo" class="privacy-logo">
+            <div class="privacy-header" style="color: var(--accent-purple); border-bottom-color: var(--accent-purple);">
+                > [ L3_TECH_GEAR // IDENTITY_LOG ]</div>
+            <div style="margin-top: 20px;">
+                <p class="about-text">
+                    Welcome to L3 Tech Gear. This platform is the specialized hardware analysis terminal founded by
+                    <span style="color: var(--accent-brand); font-weight: bold;">Lenin Santana De Jesus</span>. Driven
+                    by a lifelong obsession with hardware architecture and system optimization, Lenin serves as the lead
+                    editor and technical strategist behind every report published here.
+                </p>
+                <p class="about-text">
+                    Joined by his brother and primary collaborator, <span
+                        style="color: var(--accent-brand); font-weight: bold;">Starlin Santana De Jesus</span>, the duo
+                    operates as a unified engineering unit. Their brotherhood forms the core of L3 Tech Gear, blending
+                    shared technical intuition with a rigorous analytical approach to modern computing.
+                </p>
+                <p class="about-text">
+                    For the Santana De Jesus brothers, technology is far more than a collection of tools; it is a
+                    profound multiplier of human capability. Their passion is rooted in the "Tactical Advantage"—the
+                    belief that the right hardware doesn't just simplify work, it transforms the speed and quality of
+                    professional execution.
+                </p>
+                <p class="about-text">
+                    Beyond this outpost, Lenin and Starlin manage a broader ecosystem of digital engineering projects
+                    and technical consultancies. L3 Tech Gear serves as the central node for their hardware vetting
+                    process, ensuring that only the most efficient and high-performance units reach their standard for
+                    operation.
+                </p>
+                <p class="about-text">
+                    This site was born from a commitment to absolute vanguard technology. We cut through the marketing
+                    noise of "consumer-grade" products to find the elite tools that provide a genuine operational edge
+                    for pro-users, traders, and creative professionals worldwide.
+                </p>
+                <p class="about-text">
+                    Our mission is to decode technical complexity into actionable data. Whether you are driving 7
+                    million pixels on an ultrawide canvas or optimizing a high-frequency trading desk, Lenin and Starlin
+                    provide the ground-truth analysis required to make every hardware investment a green-light success.
+                </p>
+                <p class="about-text">
+                    Furthermore, we recognize the shift in the digital landscape. This platform is 100% mathematically
+                    optimized for mobile deployment, acknowledging that current operational flow prioritizes mobile
+                    access over traditional desktop stations. Every byte of this terminal has been engineered to ensure
+                    absolute clarity and performance on mobile devices, maintaining your tactical advantage regardless
+                    of your hardware platform.
+                </p>
+                <p class="about-text" style="color: var(--accent-purple); margin-top: 24px;">// COMM_CHANNEL_OPEN</p>
+                <a href="mailto:contact@l3techgear.com" class="contact-email">PING: contact@l3techgear.com</a>
+            </div>
+            <button class="privacy-action-btn" id="closeAboutActionBtn"
+                style="background: var(--accent-purple); border-color: var(--accent-purple); margin-top: 32px;">[
+                DISCONNECT ]</button>
+        </div>
+    </div>
+
+    <!-- Optional: Add a simple script to log clicks or handle smooth loading -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('SYSTEM_READY: MODULE_LG_45 initialized.');
+
+            // Image Slider Auto-play Logic
+            const slider = document.getElementById('productImageSlider');
+            if (slider) {
+                let autoPlayInterval;
+                let currentIndex = 0;
+                const totalImages = 3;
+                let isInteracting = false;
+
+                const startAutoPlay = () => {
+                    if (isInteracting) return;
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = setInterval(() => {
+                        if (slider.clientWidth === 0) return;
+                        currentIndex = (currentIndex + 1) % totalImages;
+                        slider.scrollTo({
+                            left: currentIndex * slider.clientWidth,
+                            behavior: 'smooth'
+                        });
+                    }, 5000);
+                };
+
+                const stopAutoPlay = () => {
+                    clearInterval(autoPlayInterval);
+                };
+
+                const handleInteractionStart = () => {
+                    isInteracting = true;
+                    stopAutoPlay();
+                };
+
+                const handleInteractionEnd = () => {
+                    isInteracting = false;
+                    // Wait a moment after interaction ends before restarting
+                    setTimeout(() => {
+                        if (!isInteracting) startAutoPlay();
+                    }, 5000);
+                };
+
+                // Touch and pointer events
+                slider.addEventListener('touchstart', handleInteractionStart, { passive: true });
+                slider.addEventListener('mouseenter', handleInteractionStart);
+                slider.addEventListener('pointerdown', handleInteractionStart);
+
+                slider.addEventListener('touchend', handleInteractionEnd, { passive: true });
+                slider.addEventListener('mouseleave', handleInteractionEnd);
+                slider.addEventListener('pointerup', handleInteractionEnd);
+                slider.addEventListener('pointerleave', handleInteractionEnd);
+
+                // Keep index in sync during manual scrolling
+                let scrollTimeout;
+                slider.addEventListener('scroll', () => {
+                    if (slider.clientWidth === 0) return;
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        currentIndex = Math.round(slider.scrollLeft / slider.clientWidth);
+                    }, 50);
+                }, { passive: true });
+
+                startAutoPlay();
+            }
+
+            // Add staggered animations to main elements
+            const animatedElements = [
+                document.querySelector('.image-container'),
+                document.querySelector('.badges'),
+                document.querySelector('.section-title'),
+                ...document.querySelectorAll('.spec-card'),
+                document.querySelector('.review-block'),
+                document.querySelector('.authority'),
+                document.querySelector('.about-section'),
+                document.querySelector('.footer')
+            ];
+
+            animatedElements.forEach((el, index) => {
+                if (el) {
+                    el.classList.add('fade-in-up');
+                    el.style.animationDelay = `${index * 0.1}s`;
+                }
+            });
+
+            // Sales counter animation loop
+            const counterElement = document.getElementById('sales-counter');
+            if (counterElement) {
+                let currentCount = 1;
+                let isCounting = true;
+
+                setInterval(() => {
+                    if (isCounting) {
+                        counterElement.textContent = `+${currentCount}`;
+                        if (currentCount >= 100) {
+                            isCounting = false;
+                            // Pause for 3 seconds when reaching 100, then restart
+                            setTimeout(() => {
+                                currentCount = 1;
+                                isCounting = true;
+                            }, 3000);
+                        } else {
+                            currentCount++;
+                        }
+                    }
+                }, 60); // Speed of the counter (ms per increment) - slowed down
+            }
+
+            // Privacy Modal Logic
+            const modalOverlay = document.getElementById('privacyModal');
+            const openBtn = document.getElementById('openPrivacyModal');
+            const closeBtn = document.getElementById('closePrivacyBtn');
+            const acceptBtn = document.getElementById('acceptPrivacyBtn');
+
+            function openModal() {
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+
+            function closeModal() {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openModal);
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (acceptBtn) acceptBtn.addEventListener('click', closeModal);
+
+            // Close on outside click
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', (e) => {
+                    if (e.target === modalOverlay) closeModal();
+                });
+            }
+
+            // About Us Modal Logic
+            const aboutModal = document.getElementById('aboutModal');
+            const aboutTrigger = document.getElementById('aboutTrigger');
+            const closeAboutBtn = document.getElementById('closeAboutBtn');
+            const closeAboutActionBtn = document.getElementById('closeAboutActionBtn');
+
+            function openAboutModal() {
+                if (aboutModal) {
+                    aboutModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            function closeAboutModal() {
+                if (aboutModal) {
+                    aboutModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (aboutTrigger) aboutTrigger.addEventListener('click', openAboutModal);
+            if (closeAboutBtn) closeAboutBtn.addEventListener('click', closeAboutModal);
+            if (closeAboutActionBtn) closeAboutActionBtn.addEventListener('click', closeAboutModal);
+
+            // Close About Modal on outside click
+            if (aboutModal) {
+                aboutModal.addEventListener('click', (e) => {
+                    if (e.target === aboutModal) closeAboutModal();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

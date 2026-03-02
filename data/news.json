@@ -1,0 +1,20 @@
+[
+  {
+    "id": "LOG_003",
+    "date": "2026.03.01",
+    "title": "PORTAL_V1_DEPLOYED",
+    "body": "L3 Tech Gear main hub is now online. All hardware modules accessible from a single command center."
+  },
+  {
+    "id": "LOG_002",
+    "date": "2026.03.01",
+    "title": "AMZFAST_49_REVIEW_LIVE",
+    "body": "Full tactical analysis of the Amzfast 49\" DQHD ultrawide deployed to the database. ACCESS_MODULE: MOD_01."
+  },
+  {
+    "id": "LOG_001",
+    "date": "2026.02.28",
+    "title": "SYSTEM_INITIALIZED",
+    "body": "L3 Tech Gear hardware vetting protocol activated. 10 module slots pre-allocated for incoming reviews."
+  }
+]
